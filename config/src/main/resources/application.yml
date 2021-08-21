@@ -1,0 +1,11 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: /home/wall/Works/workspace-spring-tool-suite-4-4.11.0.RELEASE/summaryApp/config/configs 

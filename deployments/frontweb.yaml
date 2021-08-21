@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frontweb
+  name: frontweb
+  namespace: summary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontweb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: frontweb
+    spec:
+      containers:
+      - image: localhost:32000/wallkim/frontweb-server:0.01
+        name: frontweb
+        imagePullPolicy: IfNotPresent
+        resources: {}
+status: {}

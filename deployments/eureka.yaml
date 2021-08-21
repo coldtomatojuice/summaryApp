@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: eureka
+  name: eureka
+  namespace: summary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eureka
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: eureka
+    spec:
+      containers:
+      - image: localhost:32000/wallkim/discovery-server:0.01
+        name: eureka-server
+        imagePullPolicy: IfNotPresent
+        resources: {}
+status: {}

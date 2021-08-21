@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gateway
+  name: gateway
+  namespace: summary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gateway
+    spec:
+      containers:
+      - image: localhost:32000/wallkim/gateway:0.01
+        name: gateway
+        imagePullPolicy: IfNotPresent
+        resources: {}
+status: {}
